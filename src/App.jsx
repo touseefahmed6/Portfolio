@@ -32,7 +32,7 @@ const App = () => {
             <Suspense fallback={<Loader />}>
               <Hero />
             </Suspense>
-          
+
             <Suspense fallback={<Loader />}>
               <About />
             </Suspense>
