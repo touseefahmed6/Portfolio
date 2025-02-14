@@ -43,20 +43,20 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Web Developer",
+    title: "Frontend Developer",
     icon: web,
   },
   {
-    title: "React Native Developer",
+    title: "React Developer",
     icon: mobile,
+  },
+  {
+    title: "UI/UX Designer",
+    icon: creator,
   },
   {
     title: "Backend Developer",
     icon: backend,
-  },
-  {
-    title: "Content Creator",
-    icon: creator,
   },
 ];
 
@@ -86,10 +86,6 @@ const technologies = [
     icon: redux,
   },
   {
-    name: "Tailwind CSS",
-    icon: tailwind,
-  },
-  {
     name: "Node JS",
     icon: nodejs,
   },
@@ -98,74 +94,66 @@ const technologies = [
     icon: mongodb,
   },
   {
+    name: "Tailwind CSS",
+    icon: tailwind,
+  },
+  {
     name: "Three JS",
     icon: threejs,
   },
   {
-    name: "git",
+    name: "Git",
     icon: git,
   },
   {
-    name: "figma",
-    icon: figma,
-  },
-  {
-    name: "docker",
+    name: "Docker",
     icon: docker,
   },
+  {
+    name: "Figma",
+    icon: figma,
+  }
 ];
 
 const experiences = [
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
-    icon: getImageUrl(starbucks),
+    title: "Software Engineer",
+    company_name: "Interns Pakistan",
+    icon: getImageUrl(starbucks), // Using placeholder icon
     iconBg: "#383E56",
-    date: "March 2020 - April 2021",
+    date: "Sep 2023 - Present",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Developing and maintaining web applications using React.js, Next.js, and related technologies.",
+      "Building responsive and interactive user interfaces with modern UI/UX principles.",
+      "Implementing state management using Redux Toolkit and Context API.",
+      "Collaborating with team members and participating in code reviews.",
+      "Working with REST APIs and handling data fetching and state management.",
     ],
   },
   {
-    title: "React Native Developer",
-    company_name: "Tesla",
-    icon: getImageUrl(tesla),
+    title: "Frontend Developer",
+    company_name: "Axiom",
+    icon: getImageUrl(tesla), // Using placeholder icon
     iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
+    date: "Jun 2023 - Aug 2023",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Developed responsive web applications using React.js and modern JavaScript.",
+      "Created reusable UI components and implemented state management solutions.",
+      "Collaborated with backend developers to integrate REST APIs.",
+      "Participated in daily stand-ups and sprint planning meetings.",
     ],
   },
   {
-    title: "Web Developer",
-    company_name: "Shopify",
-    icon: getImageUrl(shopify),
+    title: "Frontend Developer",
+    company_name: "Freelance",
+    icon: getImageUrl(shopify), // Using placeholder icon
     iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Full stack Developer",
-    company_name: "Meta",
-    icon: getImageUrl(meta),
-    iconBg: "#E6DEDD",
     date: "Jan 2023 - Present",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Building custom web applications for clients using React.js and Next.js.",
+      "Implementing responsive designs and ensuring cross-browser compatibility.",
+      "Working directly with clients to gather requirements and deliver solutions.",
+      "Managing multiple projects simultaneously and meeting deadlines.",
     ],
   },
 ];
