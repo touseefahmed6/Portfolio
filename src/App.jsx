@@ -3,19 +3,49 @@ import { Suspense, lazy } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import ErrorBoundary from './components/ErrorBoundary';
 import Loader from './components/Loader';
+import { useEffect } from 'react';
 
 // Lazy load components
 const About = lazy(() => import('./components/About'));
 const Contact = lazy(() => import('./components/Contact'));
 const Experience = lazy(() => import('./components/Experience'));
-const Feedbacks = lazy(() => import('./components/Feedbacks'));
 const Hero = lazy(() => import('./components/Hero'));
 const Navbar = lazy(() => import('./components/Navbar'));
 const Tech = lazy(() => import('./components/Tech'));
 const Works = lazy(() => import('./components/Works'));
 const StarsCanvas = lazy(() => import('./components/canvas/Stars'));
+const Certifications = lazy(() => import('./components/Certifications'));
 
 const App = () => {
+  useEffect(() => {
+    const handleScroll = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        // Wait for components to load
+        setTimeout(() => {
+          const element = document.getElementById(hash.substring(1));
+          if (element) {
+            const navbarHeight = document.querySelector('nav')?.offsetHeight || 0;
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+            
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth"
+            });
+          }
+        }, 500); // Increased delay to ensure components are loaded
+      }
+    };
+
+    // Handle initial load
+    handleScroll();
+
+    // Handle hash changes
+    window.addEventListener('hashchange', handleScroll);
+    return () => window.removeEventListener('hashchange', handleScroll);
+  }, []);
+
   return (
     <ErrorBoundary>
       <BrowserRouter future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
@@ -46,7 +76,7 @@ const App = () => {
               <Works />
             </Suspense>
             <Suspense fallback={<Loader />}>
-              <Feedbacks />
+              <Certifications />
             </Suspense>
             <Suspense fallback={<Loader />}>
               <Contact />

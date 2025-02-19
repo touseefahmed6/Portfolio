@@ -2,24 +2,40 @@ import PropTypes from 'prop-types';
 import { Tilt } from 'react-tilt';
 import { motion } from 'framer-motion';
 import { fadeIn } from '../utils/motion';
+import { FaLayerGroup, FaReact, FaServer, FaRocket } from 'react-icons/fa';
 
-const ServiceCard = ({ index, title, icon }) => {
+const iconComponents = {
+  FaLayerGroup,
+  FaReact,
+  FaServer,
+  FaRocket,
+};
+
+// @ts-ignore
+const ServiceCard = ({ index, title, icon, description }) => {
+  // @ts-ignore
+  const IconComponent = iconComponents[icon];
+
   return (
-    <Tilt
-      options={{
-        max: 45,
-        scale: 1,
-        speed: 450,
-      }}
-      className="xs:w-[250px] w-[320px] mx-auto"
-    >
+    <Tilt className='xs:w-[250px] w-full'>
       <motion.div
-        variants={fadeIn("right", "spring", 0.5 * index, 0.75)}
-        className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
+        variants={fadeIn("right", "spring", index * 0.5, 0.75)}
+        className='w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card'
       >
-        <div className="bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col">
-          <img src={icon} alt={title} className="w-16 h-16 object-contain" />
-          <h3 className="text-white text-[20px] font-bold text-center">{title}</h3>
+        <div
+          className='bg-tertiary rounded-[20px] py-5 px-12 min-h-[280px] flex justify-evenly items-center flex-col'
+        >
+          <div className='w-16 h-16 flex items-center justify-center text-[48px] text-white'>
+            {IconComponent && <IconComponent />}
+          </div>
+
+          <h3 className='text-white text-[20px] font-bold text-center'>
+            {title}
+          </h3>
+          
+          <p className='text-secondary text-[14px] text-center'>
+            {description}
+          </p>
         </div>
       </motion.div>
     </Tilt>
@@ -29,7 +45,8 @@ const ServiceCard = ({ index, title, icon }) => {
 ServiceCard.propTypes = {
   index: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
-  icon: PropTypes.string.isRequired
+  icon: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired
 };
 
 export default ServiceCard;

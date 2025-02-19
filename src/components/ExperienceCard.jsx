@@ -1,7 +1,9 @@
+// @ts-ignore
 import { VerticalTimelineElement } from 'react-vertical-timeline-component';
 import PropTypes from 'prop-types';
 import 'react-vertical-timeline-component/style.min.css';
 
+// @ts-ignore
 const ExperienceCard = ({ experience }) => (
   <VerticalTimelineElement
     contentStyle={{ background: '#1d1836', color: '#fff' }}
@@ -26,7 +28,9 @@ const ExperienceCard = ({ experience }) => (
     </div>
 
     <ul className="mt-5 list-disc ml-5 space-y-2">
-      {experience.points.map((point, index) => (
+      {experience.points.map((
+// @ts-ignore
+      point, index) => (
         <li
           key={`experience-point-${index}`}
           className="text-white-100 text-[14px] pl-1 tracking-wider"
