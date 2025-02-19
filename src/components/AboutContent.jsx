@@ -16,11 +16,7 @@ const AboutContent = () => {
         variants={textVariant()}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        I am a skilled software developer with experience in TypeScript and
-        JavaScript, and expertise in frameworks like React, Node.js, and
-        Three.js. I am a quick learner and collaborate closely with clients to
-        create efficient, scalable, and user-friendly solutions that solve
-        real-world problems. Lets work together to bring your ideas to life!
+        I am a skilled Full-Stack Developer with experience in React.js, Next.js, Node.js, and Firebase. I specialize in building scalable, high-performance web applications with a focus on creating responsive, user-friendly interfaces and efficient backend solutions. I am a quick learner and work closely with clients to deliver clean, performance-driven development that brings real value to their projects. Let’s work together to bring your vision to life!
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10">

@@ -12,6 +12,7 @@ export const useCanvas = () => {
   return context;
 };
 
+// @ts-ignore
 export const CanvasProvider = ({ children }) => {
   const canvasRef = useRef(null);
 

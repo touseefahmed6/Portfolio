@@ -20,6 +20,7 @@ const LoadingFallback = () => {
   return null; // Don't show anything during loading to prevent the solid sphere flash
 };
 
+// @ts-ignore
 const Computers = ({ isMobile }) => {
   const computer = useGLTF('./planet/scene.gltf', true);
   const sphereMaterial = createSphereMaterial();
@@ -50,7 +51,7 @@ const Computers = ({ isMobile }) => {
         shadow-camera-top={10}
         shadow-camera-bottom={-10}
       />
-      <pointLight 
+      <pointLight
         position={[10, 10, 10]}
         intensity={1}
         castShadow
@@ -61,7 +62,7 @@ const Computers = ({ isMobile }) => {
         intensity={0.5}
         castShadow
       />
-      
+
       {/* Add a plane to receive shadows */}
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -5, 0]} receiveShadow>
         <planeGeometry args={[100, 100]} />
@@ -91,7 +92,7 @@ const ComputersCanvas = () => {
     const mediaQuery = window.matchMedia('(max-width: 500px)');
     setIsMobile(mediaQuery.matches);
 
-    const handleMediaQueryChange = (event) => {
+    const handleMediaQueryChange = (/** @type {{ matches: boolean | ((prevState: boolean) => boolean); }} */ event) => {
       setIsMobile(event.matches);
     };
 
@@ -107,7 +108,7 @@ const ComputersCanvas = () => {
       frameloop='always'
       shadows
       camera={{ position: [20, 3, 5], fov: 25 }}
-      gl={{ 
+      gl={{
         preserveDrawingBuffer: true,
         alpha: true,
         antialias: true

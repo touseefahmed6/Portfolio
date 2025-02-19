@@ -16,11 +16,13 @@ const Contact = () => {
   });
   const [loading, setLoading] = useState(false);
 
+  // @ts-ignore
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({ ...form, [name]: value });
   };
 
+  // @ts-ignore
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
@@ -31,9 +33,9 @@ const Contact = () => {
       'YOUR_TEMPLATE_ID', // EmailJS Template ID
       {
         from_name: form.name,
-        to_name: 'Your Name',
+        to_name: 'Touseef Ahmed',
         from_email: form.email,
-        to_email: 'your@email.com',
+        to_email: 'touseefahmedhalepoto@gmail.com',
         message: form.message,
       },
       'YOUR_PUBLIC_KEY'   // EmailJS Public Key
@@ -63,6 +65,7 @@ const Contact = () => {
         <h3 className={styles.sectionHeadText}>Contact.</h3>
 
         <form
+          // @ts-ignore
           ref={formRef}
           onSubmit={handleSubmit}
           className="mt-12 flex flex-col gap-8"
